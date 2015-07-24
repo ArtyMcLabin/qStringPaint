@@ -40,8 +40,11 @@ how to use?
     QStringPaint(str2p, "REDCODE"); //kaki is red now
     
     QString imNotGonnaChange = "kaki";
-    QString imGoingThen = QStringPaint(imNotGonnaChange, REDCODE); //imNotGonnaChange is still just a black kaki.
-    //imGoingThen is a parsed html code containing the word kaki, and //surrounded by red color style.
+    QString imGoingThen = QStringPaint(imNotGonnaChange, REDCODE); 
+    
+    //imNotGonnaChange is still just a black kaki.
+    //imGoingThen is a parsed html code containing the word kaki, and surrounded by red color style.
+    
 good luck using :>
 
 
