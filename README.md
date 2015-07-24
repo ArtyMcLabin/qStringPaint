@@ -23,8 +23,12 @@ how to use?
   -if you prefer to keep the input string unchanged, you can pass the string itself (not the reference) which will call a function version with a return value QString (edited) (overload versions 2 and 4)
   
   --you can also chose how to pass the color you want your string html-parsed in.
-    1 and 3 versions are taking an html-color value in a string type, for example "#000000" for black, "#00ff00" for green etc.
+    1 and 3 versions are taking an html-color value in a string type, for example "#000000" for black, "#00ff00" for green 
+    
     2 and 4 versions are taking a Qt built in color instead, for example Qt::black, Qt::green etc.
+    
+    also black will be default if nor qtcolor and htmlColorCode are given.
+    
 
 
 //HelloCheapAndColorfulWorld.cpp    usage examples
@@ -44,6 +48,8 @@ how to use?
     
     //imNotGonnaChange is still just a black kaki.
     //imGoingThen is a parsed html code containing the word kaki, and surrounded by red color style.
+    
+    QStringPaint(imGoingThen); //imGoingThen is now black again, as a default color is black if not given in the second var.
     
 good luck using :>
 
