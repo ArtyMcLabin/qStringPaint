@@ -33,8 +33,8 @@
 void QStringPaint(QString* str, QString htmlColorCode="#000000");
 QString QStringPaint(QString str, QString htmlColorCode="#000000");
 
-void QStringPaint(QString* str, int qtcolor=Qt::black);
-QString QStringPaint(QString str, int qtcolor=Qt::black);
+void QStringPaint(QString* str, int qtcolor);
+QString QStringPaint(QString str, int qtcolor);
 
 
 
