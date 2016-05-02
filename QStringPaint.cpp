@@ -22,12 +22,12 @@
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.*/
 
 
-#include "QStringPaint.h"
+#include "qStringPaint.h"
 #include <QDebug>
 
 
 //version1        replaces the input string with colored version
-void QStringPaint(QString* str, QString htmlColorCode) //a most significant version which all the rest will handle to
+void qStringPaint::qStringPaint(QString* str, QString htmlColorCode) //a most significant version which all the rest will handle to
 {
     if(!htmlColorCode.startsWith("#"))
         htmlColorCode = "#"+htmlColorCode;
@@ -40,9 +40,9 @@ void QStringPaint(QString* str, QString htmlColorCode) //a most significant vers
 
 
 //version2         calls the first version to do the work, but this time returns a modified QString instead of replacing the input.
-QString QStringPaint(QString str, QString htmlColorCode)
+QString qStringPaint::qStringPaint(QString str, QString htmlColorCode)
 {
-     QStringPaint(&str,htmlColorCode); //call void version
+     qStringPaint(&str,htmlColorCode); //call void version
     return str;
 }
 
@@ -52,7 +52,7 @@ QString QStringPaint(QString str, QString htmlColorCode)
 
 //version 3        replacing the qt color (eg. qt::red, qt::black etc) with a proper html code color and then passes to first version.
 // cases are int represantation of the qt colors (see QColor manual in google)
-void QStringPaint(QString* str, int qtcolor)
+void qStringPaint::qStringPaint(QString* str, int qtcolor)
 {
     QString htmlColorCode;
 
@@ -76,7 +76,7 @@ void QStringPaint(QString* str, int qtcolor)
         case 6:	        htmlColorCode="#c0c0c0"; break;
                   }
 
-     QStringPaint(str, htmlColorCode); //notice, the "str" this time is a QString&, so it calls the first version!! not the second as it might look!!
+     qStringPaint(str, htmlColorCode); //notice, the "str" this time is a QString&, so it calls the first version!! not the second as it might look!!
 }
 
 
@@ -85,9 +85,9 @@ void QStringPaint(QString* str, int qtcolor)
 
 
 //version 4       calls the upper version to edit the string before we return it here
-QString QStringPaint(QString str, int qtcolor)
+QString qStringPaint::qStringPaint(QString str, int qtcolor)
 {
-     QStringPaint(&str,qtcolor);
+     qStringPaint(&str,qtcolor);
     return str;
 }
 

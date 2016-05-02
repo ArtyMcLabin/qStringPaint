@@ -27,15 +27,16 @@
 
 #include <QString>
 
-#define QPaintString QStringPaint //alias
+#define qPaintString qStringPaint //alias
 
+namespace qStringPaint
+{
+    void qStringPaint(QString* str, QString htmlColorCode="#000000");
+    QString qStringPaint(QString str, QString htmlColorCode="#000000");
 
-void QStringPaint(QString* str, QString htmlColorCode="#000000");
-QString QStringPaint(QString str, QString htmlColorCode="#000000");
-
-void QStringPaint(QString* str, int qtcolor);
-QString QStringPaint(QString str, int qtcolor);
-
+    void qStringPaint(QString* str, int qtcolor);
+    QString qStringPaint(QString str, int qtcolor);
+}
 
 
 
